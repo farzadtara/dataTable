@@ -3,22 +3,30 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 import User from '../api/src/routes/user'
 //setup
+
 const app = Express();
-dotenv.config({path:`./${process.env.NODE_ENV}.env`})
+// dotenv.config({path:`${__dirname}/${process.env.NODE_ENV}.env`});
+dotenv.config({path:`${__dirname}/development.env`});
 
 ///middelwares
+
 app.use(Express.json());
-app.use(Express.urlencoded({extended:true}));
+app.use(Express.urlencoded({extended:false}));
 app.use(cors());
 app.use(User)
 
 
-// app.get('/',(req, res)=>{
-//     res.sendStatus(200)
-// })
+
+
 
 ///server
 
-app.listen(process.env.PORT, process.env.HOST,()=>{
-    console.log("server run")
+
+app.listen(process.env.PORT, process.env.HOST,(err)=>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log(`app run  on: http://${process.env.HOST}:${process.env.PORT}`)
+
+    }
 })
