@@ -1,14 +1,14 @@
 import { Router } from "express";
 
-import UserController from '../controllers/user'
+import * as UserController from '../controllers/user'
 
 const User = Router();
 
-User.get('/',(req, res)=>{
-    res.sendStatus(200)
-})
+// User.get('/',(req, res)=>{
+//     res.sendStatus(200)
+// })
 
-// User.get('/',UserController.fetchUsers);
+User.get('/',UserController.fetchUsers);
 
 
 export default User

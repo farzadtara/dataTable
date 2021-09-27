@@ -13,8 +13,12 @@ app.use(cors());
 app.use(User)
 
 
+// app.get('/',(req, res)=>{
+//     res.sendStatus(200)
+// })
+
 ///server
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT, process.env.HOST,()=>{
     console.log("server run")
 })
