@@ -1,6 +1,6 @@
-import user from '../../models/user'
+import User from '../../models/user'
 
 
 export const createUser = async (user)=>{
-    return await user.create(user);
+    return await User.create(user);
 }

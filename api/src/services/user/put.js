@@ -1,7 +1,7 @@
-import user  from '../../models/user'
+import User  from '../../models/user'
 
 
 export const updateById = async(id, user)=>{
 
-    return await user.findByIdAndUpdate(id, user)
+    return await User.findByIdAndUpdate(id, user)
 }
