@@ -7,6 +7,6 @@ export const all  = async ()=> {
 
 ///find one
 export const byId  = async (id)=> {
-    return await user.findById({});
+    return await user.findById(id);
 }
 
