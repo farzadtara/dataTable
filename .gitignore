@@ -1,2 +1,5 @@
 api/node_modules/
 api/yarn.lock
+
+app/node_modules/
+app/yarn.lock

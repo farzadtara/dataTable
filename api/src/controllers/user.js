@@ -29,7 +29,7 @@ export const fetchUsers =  async (req , res)=>{
 
 export const fetchUser = async (req, res) => {
     try {
-        let User = await getUserService.findById(req.params.id)
+        let User = await getUserService.byId(req.params.id)
         res.status(200).json({
             success:true,
             user: User
@@ -83,14 +83,17 @@ export const updateUser = async(req , res)=>{
             email,
             password
         }=req.body
+        let userUpdate = await updateUserService.updateById(req.params.id, {
+            name,
+            email,
+            password
+        })
         res.status(201).json({
             success:true,
-            updateUser : await updateUserService.byId(req.params.id, {
-                name,
-                email,
-                password
-            })
+            updateUser : userUpdate,
+            message :  userUpdate.email + "     is updated"
         })
+
         
     } catch (error) {
         res.status(500).json({
@@ -105,9 +108,11 @@ export const updateUser = async(req , res)=>{
 export const deleteUser = async(req , res)=>{
     try {
 
+        let deletedUser = await deleteUserService.deleteById(req.params.id)
+
         res.status(200).json({
             success:true,
-            deleteUser : await deleteUserService.byId(req.params.id)
+            deleteUser : deletedUser
         })
         
     } catch (error) {
