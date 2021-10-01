@@ -1,6 +1,7 @@
 const Express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
+import '../api/src/config/index'
 import User from '../api/src/routes/user'
 //setup
 
@@ -13,7 +14,7 @@ dotenv.config({path:`${__dirname}/development.env`});
 app.use(Express.json());
 app.use(Express.urlencoded({extended:false}));
 app.use(cors());
-app.use(User)
+app.use('/users',User)
 
 
 
