@@ -1,6 +1,6 @@
 export default {
     mode: 'universal',
-    
+
     head :{
         title : 'MEVN STACK',
         meta:[
@@ -18,11 +18,13 @@ export default {
 
     comments: true,
 
-    buildModule:[],
+    buildModule:[
+        "@nuxtjs/vuetify"
+    ],
 
-    modules:[],
-
-    axios:{},
+    modules:[
+        "@nuxtjs/axios"
+    ],
 
     pwa: {
         manifest: {
