@@ -3,3 +3,6 @@ api/yarn.lock
 
 app/node_modules/
 app/yarn.lock
+
+
+app/.nuxt/

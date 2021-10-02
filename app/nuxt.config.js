@@ -19,11 +19,11 @@ export default {
     comments: true,
 
     buildModule:[
-        "@nuxtjs/vuetify"
+        '@nuxtjs/vuetify'
     ],
 
     modules:[
-        "@nuxtjs/axios"
+        '@nuxtjs/axios'
     ],
 
     pwa: {
@@ -36,14 +36,6 @@ export default {
     build: {
         vendor: ['vuetify']
       }
-    }
     
-
-
-
-
-
-
-
 
 }
