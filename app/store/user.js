@@ -1,9 +1,9 @@
-export const state = {
+export const state = () => ({
   id: '',
   name: '',
   email: '',
   password: ''
-}
+})
 
 export const mutations = {
   setId: (state, data) => {
