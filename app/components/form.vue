@@ -69,7 +69,7 @@ export default {
       this.resetUser({ id: 0, name: '', email: '', password: '' })
       this.$store.commit(
         'users/storeData',
-        (await this.$axios.$get("http://127.0.0.1/users")).data
+        (await this.$axios.$get('http://127.0.0.1/users')).data
       )
     },
     resetUser (user) {
